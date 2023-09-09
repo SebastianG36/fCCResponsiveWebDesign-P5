@@ -45,13 +45,14 @@ header h1 {
 /* Nav link styles */
 
 nav {
-  width: 50%;
+  width: 100%;
   height: 70px;
 }
 
-nav > ul {
+nav ul {
     position: fixed;
     right: 0;
+    
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -87,7 +88,9 @@ nav a:hover {
   color: var(--h1color1);
 }
 
-
+#welcome-section, #projects, #contact {
+  scroll-margin-top: 70px;
+}
 /* MAIN */
 
 main {
@@ -147,12 +150,12 @@ color: var(--pcolor1)
 .projecttiles {
   width: 100%;
   max-width: 1500px;
-  margin:  50px auto;
+  margin:  75px auto;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   align-items: center;
-  gap: 30px;
+  gap: 40px;
 
 }
 
@@ -161,16 +164,25 @@ color: var(--pcolor1)
   width: 40vw;
   max-width: 400px;
   max-height: 500px;
-  border: 1px solid black;
+  min-width: 340px;
+  min-height: 400px;
   display: flex;
   flex-direction: column;
+  border-radius: 7px;
+  background-color: var(--pcolor1);
+  color: var(--accent);
+}
+
+.project-tile:hover {
+  background-color: var(--accent);
+  color: var(--hover);
+  border: 3px solid var(--headerfooter);
+  border-top: 1px solid var(--headerfooter);
 }
 
 .imgt {
   height: 80%;
   width: 100%;
-  border: 1px solid black;
-
 }
 
 .project-tile img {
@@ -179,11 +191,88 @@ color: var(--pcolor1)
   aspect-ratio: 8 / 6;
   margin: auto;
   object-fit: cover;
-
+  border-top-right-radius: 2px;
+  border-top-left-radius: 2px;
+  
 }
+
+
+
 
 section a {
     text-decoration: inherit;
     color: inherit;
     cursor: pointer;
+}
+
+.project-tile h2 {
+  font-size: 1.5rem;
+  margin: auto;
+  padding: 10px 11px;
+}
+
+/* CONTACT */
+.contact {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(250deg, #FFBB66, #FF8C42);
+}
+
+.contact h1 {
+  color: var(--accent);
+  font-size: 2.5rem;
+  font-weight: 600;
+
+}
+
+.links {
+  position: relative;
+  top: 50px;
+  display: flex;
+  gap: 30px;
+  color: var(--headerfooter);
+  height: 100px;
+}
+
+.contact h2 {
+  font-size: 1.6rem;
+  transition-property: font-size;
+  transition-duration: 0.2s;
+  
+}
+
+.contact h2:hover {
+  font-size: 1.8rem;
+}
+
+
+/*footer*/
+
+footer {
+  background-color: var(--headerfooter);
+}
+
+footer p {
+  color: var(--accent);
+  padding: 25px 20px;
+  font-size: 1.2rem;
+  text-align: right;
+}
+
+/*media querys*/
+
+@media (max-width: 518px) {
+
+  nav ul {
+    position: static;
+    right: none;
+  }
+
+  nav > ul > li {
+    padding: 1.21rem 0.4rem;
+  }
 }
